@@ -51,6 +51,14 @@ if variables_element is not None:
             produto_derivado = partes[3]
             dia = partes[4]
             variables.append([f"p{produto_derivado}_f{fabrica}", f"{rounded_value} p{produto_primario}", "color: #FFD166", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+        elif variavel == "x2":
+            # vai dizer quando chega na f de destino
+            fabrica_origem = partes[1]
+            produto = partes[2]
+            dia = partes[3]
+            fabrica_recebe = partes[4]
+            veiculo = partes[5]
+            variables.append([f"p{produto}_f{fabrica_recebe}", f"{rounded_value} f{fabrica_origem} k{veiculo}", "color: #E899DC", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
 
         # variables.append({'name': name, 'index': index, 'value': rounded_value})
 
@@ -148,13 +156,17 @@ if variables_element is not None:
                         <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #FFD166;"></div>
                         Produção Derivada
                     </div>
+                    <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #E899DC;"></div>
+                        Transporte destino
+                    </div>
                     <div style="font-size: 16px; margin: 5px 0; display: inline-flex; align-items: center;">
                         <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #BB4430;"></div>
                         Quarentena
                     </div>
                 </div>
 
-                <div id="timeline" style="height: 4000px"></div>
+                <div id="timeline" style="height: 800px; width: 2320px"></div>
             </div>
         </body>
     </html>
