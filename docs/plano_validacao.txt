@@ -1,0 +1,245 @@
+Plano de Produção a partir da Solução do CPLEX
+=============================================
+
+Tmax: 26.0
+
+No dia 0, o estoque do produto p1 na fábrica f1 é de 1000.0 unidades.
+No dia 0, o estoque do produto p2 na fábrica f1 é de 1000.0 unidades.
+No dia 0, o estoque do produto p3 na fábrica f1 é de 1000.0 unidades.
+No dia 0, o estoque do produto p5 na fábrica f2 é de 1000.0 unidades.
+No dia 0, o estoque do produto p1 na fábrica f3 é de 1000.0 unidades.
+No dia 0, o estoque do produto p2 na fábrica f3 é de 1000.0 unidades.
+No dia 0, o estoque do produto p3 na fábrica f4 é de 1000.0 unidades.
+No dia 0, o estoque do produto p4 na fábrica f4 é de 1000.0 unidades.
+No dia 0, o estoque do produto p1 na fábrica f5 é de 50000.0 unidades.
+No dia 0, o estoque do produto p2 na fábrica f5 é de 5000.0 unidades.
+No dia 0, o estoque do produto p3 na fábrica f5 é de 5000.0 unidades.
+No dia 0, o estoque do produto p4 na fábrica f5 é de 5000.0 unidades.
+No dia 0, o estoque do produto p5 na fábrica f5 é de 5000.0 unidades.
+No dia 1, produzir 21420.0 unidades do produto p1 na fábrica f1.
+No dia 1, o estoque do produto p1 na fábrica f1 é de 1000.0 unidades.
+No dia 1, o estoque do produto p3 na fábrica f1 é de 1000.0 unidades.
+No dia 1, produzir 18900.000000000004 unidades do produto p1 na fábrica f3.
+No dia 1, o estoque do produto p1 na fábrica f3 é de 1000.0 unidades.
+No dia 1, o estoque do produto p2 na fábrica f3 é de 1000.0 unidades.
+No dia 1, produzir 10000.0 unidades do produto p3 na fábrica f4.
+No dia 1, o estoque do produto p3 na fábrica f4 é de 1000.0 unidades.
+No dia 1, o estoque do produto p4 na fábrica f4 é de 1000.0 unidades.
+No dia 1, o estoque do produto p1 na fábrica f5 é de 50000.0 unidades.
+No dia 1, o estoque do produto p2 na fábrica f5 é de 5000.0 unidades.
+No dia 1, o estoque do produto p3 na fábrica f5 é de 5000.0 unidades.
+No dia 1, o estoque do produto p4 na fábrica f5 é de 5000.0 unidades.
+No dia 1, o estoque do produto p5 na fábrica f5 é de 5000.0 unidades.
+No dia 2, produzir 679.9999999999964 unidades do produto p1 na fábrica f1.
+No dia 2, utilizar 1000.0 unidades do produto primário p1 para produzir o derivado p2 na fábrica f1.
+No dia 2, produzir 1999.9999999999054 unidades do produto p3 na fábrica f1.
+No dia 2, o estoque do produto p3 na fábrica f1 é de 1000.0 unidades.
+No dia 2, produzir 17192.0 unidades do produto p5 na fábrica f2.
+No dia 2, utilizar 1000.0 unidades do produto primário p1 para produzir o derivado p2 na fábrica f3.
+No dia 2, o estoque do produto p2 na fábrica f3 é de 1000.0 unidades.
+No dia 2, produzir 10000.0 unidades do produto p3 na fábrica f4.
+No dia 2, o estoque do produto p3 na fábrica f4 é de 1000.0000000000002 unidades.
+No dia 2, o estoque do produto p4 na fábrica f4 é de 1000.0 unidades.
+No dia 2, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 2, o estoque do produto p2 na fábrica f5 é de 5000.000000000001 unidades.
+No dia 2, o estoque do produto p3 na fábrica f5 é de 5000.0 unidades.
+No dia 2, o estoque do produto p4 na fábrica f5 é de 5000.0 unidades.
+No dia 2, o estoque do produto p5 na fábrica f5 é de 5000.000000000001 unidades.
+No dia 3, liberar 1000.0 unidades do produto p2 da quarentena na fábrica f1.
+No dia 3, transferir 1000.0000000000002 unidades do produto p2 da fábrica f1 para a fábrica f5.
+No dia 3, o estoque do produto p3 na fábrica f1 é de 1000.0 unidades.
+No dia 3, transferir 1000.0 unidades do produto p5 da fábrica f2 para a fábrica f5.
+No dia 3, liberar 1000.0 unidades do produto p2 da quarentena na fábrica f3.
+No dia 3, o estoque do produto p2 na fábrica f3 é de 2000.0 unidades.
+No dia 3, produzir 10000.0 unidades do produto p3 na fábrica f4.
+No dia 3, utilizar 1000.0000000000002 unidades do produto primário p3 para produzir o derivado p4 na fábrica f4.
+No dia 3, o estoque do produto p4 na fábrica f4 é de 1000.0000000000871 unidades.
+No dia 3, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 3, o estoque do produto p2 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 3, o estoque do produto p3 na fábrica f5 é de 5000.0 unidades.
+No dia 3, o estoque do produto p4 na fábrica f5 é de 5000.0 unidades.
+No dia 3, o estoque do produto p5 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 4, produzir 10000.0 unidades do produto p3 na fábrica f4.
+No dia 4, utilizar 2.546585164964199e-11 unidades do produto primário p3 para produzir o derivado p4 na fábrica f4.
+No dia 4, liberar 1000.0000000000002 unidades do produto p4 da quarentena na fábrica f4.
+No dia 4, o estoque do produto p4 na fábrica f4 é de 2000.0000000000873 unidades.
+No dia 4, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 4, o estoque do produto p2 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 4, o estoque do produto p3 na fábrica f5 é de 5000.0 unidades.
+No dia 4, o estoque do produto p4 na fábrica f5 é de 4999.999999999913 unidades.
+No dia 4, o estoque do produto p5 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 5, transferir 1000.0 unidades do produto p2 da fábrica f1 para a fábrica f5.
+No dia 5, liberar 10000.0 unidades do produto p3 da quarentena na fábrica f4.
+No dia 5, o estoque do produto p3 na fábrica f4 é de 9000.0 unidades.
+No dia 5, utilizar 1000.0 unidades do produto primário p3 para produzir o derivado p4 na fábrica f4.
+No dia 5, liberar 2.546585164964199e-11 unidades do produto p4 da quarentena na fábrica f4.
+No dia 5, o estoque do produto p4 na fábrica f4 é de 2000.0000000001128 unidades.
+No dia 5, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 5, o estoque do produto p2 na fábrica f5 é de 7000.000000000001 unidades.
+No dia 5, o estoque do produto p3 na fábrica f5 é de 4999.9999999999745 unidades.
+No dia 5, o estoque do produto p4 na fábrica f5 é de 4999.999999999913 unidades.
+No dia 5, o estoque do produto p5 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 6, liberar 1999.9999999999054 unidades do produto p3 da quarentena na fábrica f1.
+No dia 6, transferir 1000.0 unidades do produto p3 da fábrica f1 para a fábrica f4.
+No dia 6, transferir 2000.0 unidades do produto p2 da fábrica f3 para a fábrica f5.
+No dia 6, liberar 10000.0 unidades do produto p3 da quarentena na fábrica f4.
+No dia 6, o estoque do produto p3 na fábrica f4 é de 20000.0 unidades.
+No dia 6, liberar 1000.0 unidades do produto p4 da quarentena na fábrica f4.
+No dia 6, o estoque do produto p4 na fábrica f4 é de 3000.000000000113 unidades.
+No dia 6, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 6, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 6, o estoque do produto p3 na fábrica f5 é de 4999.9999999999745 unidades.
+No dia 6, o estoque do produto p4 na fábrica f5 é de 4999.999999999913 unidades.
+No dia 6, o estoque do produto p5 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 7, liberar 10000.0 unidades do produto p3 da quarentena na fábrica f4.
+No dia 7, utilizar 30000.0 unidades do produto primário p3 para produzir o derivado p4 na fábrica f4.
+No dia 7, o estoque do produto p4 na fábrica f4 é de 3000.000000000113 unidades.
+No dia 7, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 7, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 7, o estoque do produto p3 na fábrica f5 é de 4999.9999999999745 unidades.
+No dia 7, o estoque do produto p4 na fábrica f5 é de 4999.999999999913 unidades.
+No dia 7, o estoque do produto p5 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 8, transferir 1999.999999999971 unidades do produto p3 da fábrica f1 para a fábrica f4.
+No dia 8, liberar 17192.0 unidades do produto p5 da quarentena na fábrica f2.
+No dia 8, o estoque do produto p5 na fábrica f2 é de 17192.0 unidades.
+No dia 8, liberar 10000.0 unidades do produto p3 da quarentena na fábrica f4.
+No dia 8, utilizar 11999.99999999997 unidades do produto primário p3 para produzir o derivado p4 na fábrica f4.
+No dia 8, liberar 30000.0 unidades do produto p4 da quarentena na fábrica f4.
+No dia 8, o estoque do produto p4 na fábrica f4 é de 33000.00000000012 unidades.
+No dia 8, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 8, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 8, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 8, o estoque do produto p4 na fábrica f5 é de 4999.999999999913 unidades.
+No dia 8, o estoque do produto p5 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 9, liberar 11999.99999999997 unidades do produto p4 da quarentena na fábrica f4.
+No dia 9, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 9, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 9, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 9, o estoque do produto p4 na fábrica f5 é de 4999.999999999913 unidades.
+No dia 9, o estoque do produto p5 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 10, transferir 45000.00000000009 unidades do produto p4 da fábrica f4 para a fábrica f5.
+No dia 10, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 10, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 10, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 10, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 10, o estoque do produto p5 na fábrica f5 é de 6000.000000000001 unidades.
+No dia 11, transferir 17192.0 unidades do produto p5 da fábrica f2 para a fábrica f5.
+No dia 11, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 11, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 11, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 11, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 11, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 12, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 12, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 12, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 12, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 12, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 13, produzir 16808.0 unidades do produto p5 na fábrica f2.
+No dia 13, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 13, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 13, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 13, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 13, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 14, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 14, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 14, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 14, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 14, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 15, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 15, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 15, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 15, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 15, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 16, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 16, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 16, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 16, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 16, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 17, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 17, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 17, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 17, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 17, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 18, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 18, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 18, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 18, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 18, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 19, liberar 16808.0 unidades do produto p5 da quarentena na fábrica f2.
+No dia 19, produzir 5000.000000000091 unidades do produto p3 na fábrica f4.
+No dia 19, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 19, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 19, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 19, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 19, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 20, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 20, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 20, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 20, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 20, o estoque do produto p5 na fábrica f5 é de 23192.0 unidades.
+No dia 21, transferir 16808.0 unidades do produto p5 da fábrica f2 para a fábrica f5.
+No dia 21, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 21, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 21, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 21, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 21, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 22, liberar 21420.0 unidades do produto p1 da quarentena na fábrica f1.
+No dia 22, utilizar 21420.0 unidades do produto primário p1 para produzir o derivado p2 na fábrica f1.
+No dia 22, liberar 18900.000000000004 unidades do produto p1 da quarentena na fábrica f3.
+No dia 22, utilizar 18900.000000000004 unidades do produto primário p1 para produzir o derivado p2 na fábrica f3.
+No dia 22, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 22, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 22, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 22, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 22, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 23, liberar 679.9999999999964 unidades do produto p1 da quarentena na fábrica f1.
+No dia 23, utilizar 679.9999999999964 unidades do produto primário p1 para produzir o derivado p2 na fábrica f1.
+No dia 23, liberar 21420.0 unidades do produto p2 da quarentena na fábrica f1.
+No dia 23, liberar 18900.000000000004 unidades do produto p2 da quarentena na fábrica f3.
+No dia 23, liberar 5000.000000000091 unidades do produto p3 da quarentena na fábrica f4.
+No dia 23, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 23, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 23, o estoque do produto p3 na fábrica f5 é de 4999.999999999909 unidades.
+No dia 23, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 23, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 24, liberar 679.9999999999964 unidades do produto p2 da quarentena na fábrica f1.
+No dia 24, transferir 18900.000000000004 unidades do produto p2 da fábrica f3 para a fábrica f1.
+No dia 24, transferir 5000.000000000091 unidades do produto p3 da fábrica f4 para a fábrica f5.
+No dia 24, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 24, o estoque do produto p2 na fábrica f5 é de 9000.0 unidades.
+No dia 24, o estoque do produto p3 na fábrica f5 é de 10000.0 unidades.
+No dia 24, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 24, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 25, transferir 8460.0 unidades do produto p2 da fábrica f1 para a fábrica f5.
+No dia 25, transferir 12960.0 unidades do produto p2 da fábrica f1 para a fábrica f5.
+No dia 25, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 25, o estoque do produto p2 na fábrica f5 é de 30420.0 unidades.
+No dia 25, o estoque do produto p3 na fábrica f5 é de 9999.999999999998 unidades.
+No dia 25, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 25, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 26, transferir 19580.0 unidades do produto p2 da fábrica f1 para a fábrica f5.
+No dia 26, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 26, o estoque do produto p2 na fábrica f5 é de 50000.0 unidades.
+No dia 26, o estoque do produto p3 na fábrica f5 é de 9999.999999999998 unidades.
+No dia 26, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 26, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 27, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 27, o estoque do produto p2 na fábrica f5 é de 50000.0 unidades.
+No dia 27, o estoque do produto p3 na fábrica f5 é de 9999.999999999998 unidades.
+No dia 27, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 27, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 28, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 28, o estoque do produto p2 na fábrica f5 é de 50000.0 unidades.
+No dia 28, o estoque do produto p3 na fábrica f5 é de 9999.999999999998 unidades.
+No dia 28, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 28, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 29, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 29, o estoque do produto p2 na fábrica f5 é de 50000.0 unidades.
+No dia 29, o estoque do produto p3 na fábrica f5 é de 9999.999999999998 unidades.
+No dia 29, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 29, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
+No dia 30, o estoque do produto p1 na fábrica f5 é de 50000.000000000015 unidades.
+No dia 30, o estoque do produto p2 na fábrica f5 é de 50000.0 unidades.
+No dia 30, o estoque do produto p3 na fábrica f5 é de 9999.999999999998 unidades.
+No dia 30, o estoque do produto p4 na fábrica f5 é de 50000.0 unidades.
+No dia 30, o estoque do produto p5 na fábrica f5 é de 40000.0 unidades.
