@@ -37,14 +37,42 @@ if variables_element is not None:
             dia = partes[3]
             if produto not in quarentena_tempo:
                 continue
-            variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #BB4430", f"new Date(2024, 0, {int(dia) - quarentena_tempo[produto]})", f"new Date(2024, 0, {dia})"])
-
+            variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #B8BAB8", f"new Date(2024, 0, {int(dia) - quarentena_tempo[produto]})", f"new Date(2024, 0, {dia})"])
         elif variavel == "yi":
-            # Produção
+            # Produção (produção insumo, queijo peça por exemplo)
             fabrica = partes[1]
             produto = partes[2]
             dia = partes[3]
-            variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #5C95FF", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #AEB1F3", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+        elif variavel == "yd":
+            # Produção (produção derivada do insumo, queijo fatiado por exemplo)
+            fabrica = partes[1]
+            produto_primario = partes[2]
+            produto_derivado = partes[3]
+            dia = partes[4]
+            variables.append([f"p{produto_derivado}_f{fabrica}", f"{rounded_value} p{produto_primario}", "color: #3488D1", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+        elif variavel == "x2":
+            # vai dizer quando chega na f de destino
+            fabrica_origem = partes[1]
+            produto = partes[2]
+            dia = partes[3]
+            fabrica_recebe = partes[4]
+            veiculo = partes[5]
+            variables.append([f"p{produto}_f{fabrica_recebe}", f"{rounded_value} f{fabrica_origem} k{veiculo}", "color: #A261C7", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+        elif variavel == "x":
+            # vai dizer quando está saindo da fabrica de origem f
+            fabrica_origem = partes[1]
+            produto = partes[2]
+            dia = partes[3]
+            fabrica_destino = partes[4]
+            veiculo = partes[5]
+            variables.append([f"p{produto}_f{fabrica_origem}", f"{rounded_value} f{fabrica_destino} k{veiculo}", "color: #C589E8", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+        elif variavel == "I":
+            # Estoque
+            fabrica = partes[1]
+            produto = partes[2]
+            dia = partes[3]
+            variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #8CE788", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
 
         # variables.append({'name': name, 'index': index, 'value': rounded_value})
 
@@ -135,16 +163,34 @@ if variables_element is not None:
             <div id="chart-container">
                 <div style="font-family: Arial, sans-serif; display: flex; align-items: center;">
                     <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
-                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #5C95FF;"></div>
-                        Produção
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #AEB1F3;"></div>
+                        Produção Insumo
                     </div>
-                    <div style="font-size: 16px; margin: 5px 0; display: inline-flex; align-items: center;">
-                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #BB4430;"></div>
+                    <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #3488D1;"></div>
+                        Produção Derivada
+                    </div>
+                    <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #C589E8;"></div>
+                        Transporte origem
+                    </div>
+                    <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #A261C7;"></div>
+                        Transporte destino
+                    </div>
+                    <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #B8BAB8;"></div>
                         Quarentena
                     </div>
+
+                   <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #8CE788;"></div>
+                        Estoque
+                    </div> 
+
                 </div>
 
-                <div id="timeline" style="height: 4000px"></div>
+                <div id="timeline" style="height: 1100px; width: 2720px"></div>
             </div>
         </body>
     </html>
