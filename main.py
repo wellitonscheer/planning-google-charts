@@ -38,13 +38,19 @@ if variables_element is not None:
             if produto not in quarentena_tempo:
                 continue
             variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #BB4430", f"new Date(2024, 0, {int(dia) - quarentena_tempo[produto]})", f"new Date(2024, 0, {dia})"])
-
         elif variavel == "yi":
-            # Produção
+            # Produção (produção insumo, queijo peça por exemplo)
             fabrica = partes[1]
             produto = partes[2]
             dia = partes[3]
             variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #5C95FF", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+        elif variavel == "yd":
+            # Produção (produção derivada do insumo, queijo fatiado por exemplo)
+            fabrica = partes[1]
+            produto_primario = partes[2]
+            produto_derivado = partes[3]
+            dia = partes[4]
+            variables.append([f"p{produto_derivado}_f{fabrica}", f"{rounded_value} p{produto_primario}", "color: #FFD166", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
 
         # variables.append({'name': name, 'index': index, 'value': rounded_value})
 
@@ -136,7 +142,11 @@ if variables_element is not None:
                 <div style="font-family: Arial, sans-serif; display: flex; align-items: center;">
                     <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
                         <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #5C95FF;"></div>
-                        Produção
+                        Produção Insumo
+                    </div>
+                    <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #FFD166;"></div>
+                        Produção Derivada
                     </div>
                     <div style="font-size: 16px; margin: 5px 0; display: inline-flex; align-items: center;">
                         <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #BB4430;"></div>
