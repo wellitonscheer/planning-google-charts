@@ -10,6 +10,7 @@ root = tree.getroot()
 variables_element = root.find(".//variables")
 
 quarentena_tempo = {"1": 20, "3": 3, "5": 5}
+numbers_style = {"1": "₁", "2": "₂", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉"}
 
 if variables_element is not None:
     variables = []
@@ -37,20 +38,20 @@ if variables_element is not None:
             dia = partes[3]
             if produto not in quarentena_tempo:
                 continue
-            variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #B8BAB8", f"new Date(2024, 0, {int(dia) - quarentena_tempo[produto]})", f"new Date(2024, 0, {dia})"])
+            variables.append([f"p{produto}_f{fabrica}", f"p{numbers_style[produto]} f{numbers_style[fabrica]}", f"{rounded_value}", "color: #B8BAB8", f"new Date(2024, 0, {int(dia) - quarentena_tempo[produto]})", f"new Date(2024, 0, {dia})"])
         elif variavel == "yi":
             # Produção (produção insumo, queijo peça por exemplo)
             fabrica = partes[1]
             produto = partes[2]
             dia = partes[3]
-            variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #AEB1F3", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica}", f"p{numbers_style[produto]} f{numbers_style[fabrica]}", f"{rounded_value}", "color: #AEB1F3", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
         elif variavel == "yd":
             # Produção (produção derivada do insumo, queijo fatiado por exemplo)
             fabrica = partes[1]
             produto_primario = partes[2]
             produto_derivado = partes[3]
             dia = partes[4]
-            variables.append([f"p{produto_derivado}_f{fabrica}", f"{rounded_value} p{produto_primario}", "color: #3488D1", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto_derivado}_f{fabrica}", f"p{numbers_style[produto_derivado]} f{numbers_style[fabrica]}", f"{rounded_value} p{produto_primario}", "color: #3488D1", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
         elif variavel == "x2":
             # vai dizer quando chega na f de destino
             fabrica_origem = partes[1]
@@ -58,7 +59,7 @@ if variables_element is not None:
             dia = partes[3]
             fabrica_recebe = partes[4]
             veiculo = partes[5]
-            variables.append([f"p{produto}_f{fabrica_recebe}", f"{rounded_value} f{fabrica_origem} k{veiculo}", "color: #A261C7", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica_recebe}", f"p{numbers_style[produto]} f{numbers_style[fabrica_recebe]}", f"{rounded_value} f{fabrica_origem} k{veiculo}", "color: #A261C7", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
         elif variavel == "x":
             # vai dizer quando está saindo da fabrica de origem f
             fabrica_origem = partes[1]
@@ -66,19 +67,19 @@ if variables_element is not None:
             dia = partes[3]
             fabrica_destino = partes[4]
             veiculo = partes[5]
-            variables.append([f"p{produto}_f{fabrica_origem}", f"{rounded_value} f{fabrica_destino} k{veiculo}", "color: #C589E8", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica_origem}", f"p{numbers_style[produto]} f{numbers_style[fabrica_origem]}", f"{rounded_value} f{fabrica_destino} k{veiculo}", "color: #C589E8", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
         elif variavel == "I":
             # Estoque
             fabrica = partes[1]
             produto = partes[2]
             dia = partes[3]
-            variables.append([f"p{produto}_f{fabrica}", f"{rounded_value}", "color: #8CE788", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica}", f"p{numbers_style[produto]} f{numbers_style[fabrica]}", f"{rounded_value}", "color: #8CE788", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
 
         # variables.append({'name': name, 'index': index, 'value': rounded_value})
 
     sorted_variables = sorted(variables, key=lambda x: (x[0].split('_')[0], x[0].split('_')[1]))
     formatted_data_list = [
-        f"[{repr(item[0])}, {repr(item[1])}, {repr(item[2])}, {item[3]}, {item[4]}]"
+        f"[{repr(item[1])}, {repr(item[2])}, {repr(item[3])}, {item[4]}, {item[5]}]"
         for item in sorted_variables
     ]
     result = f"[{', '.join(formatted_data_list)}]"
@@ -91,7 +92,6 @@ if variables_element is not None:
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>Document</title>
-
             <script
             type="text/javascript"
             src="https://www.gstatic.com/charts/loader.js"
@@ -141,16 +141,25 @@ if variables_element is not None:
                     hAxis: {
                         format: "d",
                         textStyle: {
-                        hAlign: "center",
-                        vAlign: "top",
+                            hAlign: "center",
+                            vAlign: "top",
                         },
                     },
                     timeline: {
                         colorByRowLabel: false,
                         groupByRowLabel: true,
+                        rowLabelStyle: {
+                            fontName: "Cambria Math",
+                            fontSize: 18,
+                            italic: true,
+                            bold: true,
+                        },
                         barLabelStyle: {
-                        color: "black",
-                        bold: true,
+                            color: "black",
+                            bold: true,
+                            fontName: "Cambria Math",
+                            italic: true,
+                            bold: true,
                         },
                     },
                 };
