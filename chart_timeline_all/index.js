@@ -50,6 +50,14 @@ fetch("../data_solucao.json")
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
+          case "producao_derivado":
+            return [
+              produtoFabrica,
+              `${valorString} p${item["produto_primario"]}`,
+              "color: #3488D1",
+              newDate(diaInt),
+              newDate(diaInt + 1),
+            ];
           default:
             console.log("tipo invalido: ", item["tipo"]);
         }
