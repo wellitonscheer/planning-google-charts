@@ -58,53 +58,77 @@ fetch("../data_solucao.json")
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
+          case "transporte_destino":
+            return [
+              produtoFabrica,
+              `${valorString} f${item["fabrica_origem"]} k${item["veiculo"]}`,
+              "color: #A261C7",
+              newDate(diaInt),
+              newDate(diaInt + 1),
+            ];
+          case "transporte_origem":
+            return [
+              produtoFabrica,
+              `${valorString} f${item["fabrica_destino"]} k${item["veiculo"]}`,
+              "color: #C589E8",
+              newDate(diaInt),
+              newDate(diaInt + 1),
+            ];
+          case "estoque":
+            return [
+              produtoFabrica,
+              valorString,
+              "color: #8CE788",
+              newDate(diaInt),
+              newDate(diaInt + 1),
+            ];
           default:
             console.log("tipo invalido: ", item["tipo"]);
         }
       })
       .filter((value) => !!value);
-    console.log(chartData);
+  })
+  .then(() => {
+    google.charts.load("current", { packages: ["timeline"] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var container = document.getElementById("timeline");
+      var chart = new google.visualization.Timeline(container);
+      var dataTable = new google.visualization.DataTable();
+      dataTable.addColumn({ type: "string", id: "p_f" });
+      dataTable.addColumn({ type: "string", id: "acao" });
+      dataTable.addColumn({ type: "string", role: "style" });
+      dataTable.addColumn({ type: "date", id: "dia_comeco" });
+      dataTable.addColumn({ type: "date", id: "dia_fim" });
+      dataTable.addRows(chartData);
+      var options = {
+        hAxis: {
+          format: "d",
+          textStyle: {
+            hAlign: "center",
+            vAlign: "top",
+          },
+        },
+        timeline: {
+          colorByRowLabel: false,
+          groupByRowLabel: true,
+          rowLabelStyle: {
+            fontName: "Cambria Math",
+            fontSize: 18,
+            italic: true,
+            bold: true,
+          },
+          barLabelStyle: {
+            color: "black",
+            bold: true,
+            fontName: "Cambria Math",
+            italic: true,
+            bold: true,
+          },
+        },
+      };
+
+      chart.draw(dataTable, options);
+    }
   })
   .catch((error) => console.error("Error fetching JSON:", error));
-
-google.charts.load("current", { packages: ["timeline"] });
-google.charts.setOnLoadCallback(drawChart);
-function drawChart() {
-  var container = document.getElementById("timeline");
-  var chart = new google.visualization.Timeline(container);
-  var dataTable = new google.visualization.DataTable();
-  dataTable.addColumn({ type: "string", id: "p_f" });
-  dataTable.addColumn({ type: "string", id: "acao" });
-  dataTable.addColumn({ type: "string", role: "style" });
-  dataTable.addColumn({ type: "date", id: "dia_comeco" });
-  dataTable.addColumn({ type: "date", id: "dia_fim" });
-  dataTable.addRows(chartData);
-  var options = {
-    hAxis: {
-      format: "d",
-      textStyle: {
-        hAlign: "center",
-        vAlign: "top",
-      },
-    },
-    timeline: {
-      colorByRowLabel: false,
-      groupByRowLabel: true,
-      rowLabelStyle: {
-        fontName: "Cambria Math",
-        fontSize: 18,
-        italic: true,
-        bold: true,
-      },
-      barLabelStyle: {
-        color: "black",
-        bold: true,
-        fontName: "Cambria Math",
-        italic: true,
-        bold: true,
-      },
-    },
-  };
-
-  chart.draw(dataTable, options);
-}
