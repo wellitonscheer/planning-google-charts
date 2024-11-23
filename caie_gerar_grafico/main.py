@@ -50,7 +50,8 @@ if variables_element is not None:
             fabrica = partes[1]
             produto = partes[2]
             dia = partes[3]
-            variables.append([f"p{produto}_f{fabrica}", f"p{numbers_style[produto]} f{numbers_style[fabrica]}", f"{rounded_value}", "color: #AEB1F3", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica}", f"p{numbers_style[produto]} f{numbers_style[fabrica]}", f"{rounded_value}",
+            "color: #AEB1F3", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
         elif variavel == "yd":
             # Produção (produção derivada do insumo, queijo fatiado por exemplo)
             fabrica = partes[1]

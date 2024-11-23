@@ -13,6 +13,10 @@ const numbers_style = {
 const quarentena_tempo = { 1: 20, 3: 3, 5: 5 };
 let chartData;
 
+function newDate(dia) {
+  return new Date(2024, 0, dia);
+}
+
 fetch("../data_solucao.json")
   .then((response) => {
     if (!response.ok) {
@@ -23,24 +27,31 @@ fetch("../data_solucao.json")
   .then((data) => {
     chartData = data
       .map((item) => {
-        console.log(item["tipo"]);
+        const produto = item["produto"];
+        const fabrica = item["fabrica"];
+        const produtoFabrica = `p${numbers_style[produto]} f${numbers_style[fabrica]}`;
+        const valorString = `${item["valor"]}`;
+        const diaInt = Number(item["dia"]);
+
         switch (item["tipo"]) {
           case "quarentena":
             return [
-              `p${numbers_style[item["produto"]]} f${
-                numbers_style[item["fabrica"]]
-              }`,
-              `${item["valor"]}`,
+              produtoFabrica,
+              valorString,
               "color: #B8BAB8",
-              new Date(
-                2024,
-                0,
-                Number(item["dia"]) - quarentena_tempo[item["produto"]]
-              ),
-              new Date(2024, 0, Number(item["dia"])),
+              newDate(diaInt - quarentena_tempo[produto]),
+              newDate(diaInt),
+            ];
+          case "producao_insumo":
+            return [
+              produtoFabrica,
+              valorString,
+              "color: #AEB1F3",
+              newDate(diaInt),
+              newDate(diaInt + 1),
             ];
           default:
-            console.log("tipo invalido", item);
+            console.log("tipo invalido: ", item["tipo"]);
         }
       })
       .filter((value) => !!value);
