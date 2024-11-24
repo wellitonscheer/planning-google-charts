@@ -16,6 +16,7 @@ let chartData;
 function newDate(dia) {
   return new Date(2024, 0, dia);
 }
+const produtos_usar_chart = [1, 2];
 
 fetch("../data_solucao.json")
   .then((response) => {
@@ -33,11 +34,11 @@ fetch("../data_solucao.json")
         const produtoFabrica = `p${numbers_style[produto]} f${numbers_style[fabrica]}`;
         const valorString = `${item["valor"]}`;
         const diaInt = Number(item["dia"]);
-        if (Number(produto) != 1) {
+        if (!produtos_usar_chart.includes(Number(produto))) {
           return;
         }
         // prduto p2 usa p1, e p4 usa p3
-        if (Number(fabrica) == 5 || Number(item["fabrica_destino"]) == 5) {
+        if (Number(fabrica) == 5) {
           return;
         }
         switch (item["tipo"]) {
@@ -82,9 +83,6 @@ fetch("../data_solucao.json")
               newDate(diaInt + 1),
             ];
           case "transporte_destino":
-            if (Number(fabrica) == 5) {
-              break;
-            }
             return [
               produtoFabrica,
               `${valorString} f${item["fabrica_origem"]} k${item["veiculo"]}`,
