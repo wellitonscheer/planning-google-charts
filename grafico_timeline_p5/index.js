@@ -16,7 +16,7 @@ let chartData;
 function newDate(dia) {
   return new Date(2024, 0, dia);
 }
-const produtos_usar_chart = [1, 2];
+const produtos_usar_chart = [5];
 
 fetch("../data_solucao.json")
   .then((response) => {
@@ -85,7 +85,7 @@ fetch("../data_solucao.json")
           case "transporte_destino":
             return [
               produtoFabrica,
-              `${valorString} f${item["fabrica_origem"]} k${item["veiculo"]}`,
+              `${valorString} f${item["fabrica_origem"]} ${item["veiculo"]}`,
               "color: #f3dfa2",
               newDate(diaInt),
               newDate(diaInt + 1),
@@ -93,7 +93,7 @@ fetch("../data_solucao.json")
           case "transporte_origem":
             return [
               produtoFabrica,
-              `${valorString} f${item["fabrica_destino"]} k${item["veiculo"]}`,
+              `${valorString} f${item["fabrica_destino"]} ${item["veiculo"]}`,
               "color: #ffaf80",
               newDate(diaInt),
               newDate(diaInt + 1),
