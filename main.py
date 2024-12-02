@@ -57,7 +57,7 @@ if variables_element is not None:
             produto_primario = partes[2]
             produto_derivado = partes[3]
             dia = partes[4]
-            variables.append([f"p{produto_derivado}_f{fabrica}", f"p{numbers_style[produto_derivado]} f{numbers_style[fabrica]}", f"{rounded_value} p{produto_primario}", "color: #3488D1", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto_derivado}_f{fabrica}", f"p{numbers_style[produto_derivado]} f{numbers_style[fabrica]}", f"{rounded_value} p{produto_primario}", "color: #d7a7f3", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
         elif variavel == "x2":
             # vai dizer quando chega na f de destino
             fabrica_origem = partes[1]
@@ -65,7 +65,7 @@ if variables_element is not None:
             dia = partes[3]
             fabrica_recebe = partes[4]
             veiculo = partes[5]
-            variables.append([f"p{produto}_f{fabrica_recebe}", f"p{numbers_style[produto]} f{numbers_style[fabrica_recebe]}", f"{rounded_value} f{fabrica_origem} k{veiculo}", "color: #A261C7", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica_recebe}", f"p{numbers_style[produto]} f{numbers_style[fabrica_recebe]}", f"{rounded_value} f{fabrica_origem} k{veiculo}", "color: #f3dfa2", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
         elif variavel == "x":
             # vai dizer quando está saindo da fabrica de origem f
             fabrica_origem = partes[1]
@@ -73,13 +73,13 @@ if variables_element is not None:
             dia = partes[3]
             fabrica_destino = partes[4]
             veiculo = partes[5]
-            variables.append([f"p{produto}_f{fabrica_origem}", f"p{numbers_style[produto]} f{numbers_style[fabrica_origem]}", f"{rounded_value} f{fabrica_destino} k{veiculo}", "color: #C589E8", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica_origem}", f"p{numbers_style[produto]} f{numbers_style[fabrica_origem]}", f"{rounded_value} f{fabrica_destino} k{veiculo}", "color: #ffaf80", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
         elif variavel == "I":
             # Estoque
             fabrica = partes[1]
             produto = partes[2]
             dia = partes[3]
-            variables.append([f"p{produto}_f{fabrica}", f"p{numbers_style[produto]} f{numbers_style[fabrica]}", f"{rounded_value}", "color: #8CE788", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
+            variables.append([f"p{produto}_f{fabrica}", f"p{numbers_style[produto]} f{numbers_style[fabrica]}", f"{rounded_value}", "color: #cde4ab", f"new Date(2024, 0, {dia})", f"new Date(2024, 0, {int(dia) + 1})"])
 
         # variables.append({'name': name, 'index': index, 'value': rounded_value})
 
@@ -182,15 +182,15 @@ if variables_element is not None:
                         Produção Insumo
                     </div>
                     <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
-                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #3488D1;"></div>
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #d7a7f3;"></div>
                         Produção Derivada
                     </div>
                     <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
-                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #C589E8;"></div>
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #ffaf80;"></div>
                         Transporte origem
                     </div>
                     <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
-                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #A261C7;"></div>
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #f3dfa2;"></div>
                         Transporte destino
                     </div>
                     <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
@@ -199,7 +199,7 @@ if variables_element is not None:
                     </div>
 
                    <div style="font-size: 16px; margin: 5px 10px 5px 0; display: inline-flex; align-items: center;">
-                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #8CE788;"></div>
+                        <div style="width: 20px; height: 20px; display: inline-block; margin-right: 8px; border: 1px solid #000; background-color: #cde4ab;"></div>
                         Estoque
                     </div> 
 

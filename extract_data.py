@@ -48,18 +48,17 @@ if variables_element is not None:
         name = var.get('name')
         index = var.get('index')
         value = var.get('value')
+        partes = name.split("#")
+        variavel = partes[0]
 
         try:
             numeric_value = float(value)
-            if abs(numeric_value) < SMALL_THRESHOLD:
+            if abs(numeric_value) < SMALL_THRESHOLD and variavel != "I":
                 continue
             rounded_value = round(numeric_value, 4)
         except ValueError:
             continue
-            
-        partes = name.split("#")
-        variavel = partes[0]
-
+        
         if variavel == "Q":
             # Quarentena
             fabrica = partes[1]
@@ -117,7 +116,8 @@ if variables_element is not None:
             produto = partes[2]
             dia = partes[3]
             fabrica_recebe = partes[4]
-            veiculo = partes[5]
+            tipo_transporte = partes[5]
+            veiculo = partes[6]
             data[index] = {
                 "tipo": "transporte_destino",
                 "produto": produto,
@@ -127,7 +127,7 @@ if variables_element is not None:
                 "produto_primario": None,
                 "fabrica_origem": fabrica_origem,
                 "fabrica_destino": fabrica_recebe,
-                "veiculo": veiculo,
+                "veiculo": f't{tipo_transporte}-k{veiculo}',
             }
         elif variavel == "x":
             # vai dizer quando está saindo da fabrica de origem f
@@ -135,7 +135,8 @@ if variables_element is not None:
             produto = partes[2]
             dia = partes[3]
             fabrica_destino = partes[4]
-            veiculo = partes[5]
+            tipo_transporte = partes[5]
+            veiculo = partes[6]
             data[index] = {
                 "tipo": "transporte_origem",
                 "produto": produto,
@@ -145,7 +146,7 @@ if variables_element is not None:
                 "produto_primario": None,
                 "fabrica_origem": fabrica_origem,
                 "fabrica_destino": fabrica_destino,
-                "veiculo": veiculo,
+                "veiculo": f't{tipo_transporte}-k{veiculo}',
             }
         elif variavel == "I":
             # Estoque

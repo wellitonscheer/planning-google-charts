@@ -16,6 +16,7 @@ let chartData;
 function newDate(dia) {
   return new Date(2024, 0, dia);
 }
+const produtos_usar_chart = [3, 4];
 
 fetch("../data_solucao.json")
   .then((response) => {
@@ -25,6 +26,7 @@ fetch("../data_solucao.json")
     return response.json();
   })
   .then((data) => {
+    let extraItems = [];
     chartData = data
       .map((item) => {
         const produto = item["produto"];
@@ -32,15 +34,37 @@ fetch("../data_solucao.json")
         const produtoFabrica = `p${numbers_style[produto]} f${numbers_style[fabrica]}`;
         const valorString = `${item["valor"]}`;
         const diaInt = Number(item["dia"]);
-
+        if (!produtos_usar_chart.includes(Number(produto))) {
+          return;
+        }
+        // prduto p2 usa p1, e p4 usa p3
+        if (Number(fabrica) == 5) {
+          return;
+        }
         switch (item["tipo"]) {
+          // case "quarentena":
+          //   return [
+          //     produtoFabrica,
+          //     valorString,
+          //     "color: #B8BAB8",
+          //     newDate(diaInt - quarentena_tempo[produto]),
+          //     newDate(diaInt),
+          //   ];
           case "quarentena":
+            const diaInicio = diaInt - quarentena_tempo[produto];
+            extraItems.push([
+              produtoFabrica,
+              `ini ${valorString}`,
+              "color: #B8BAB8",
+              newDate(diaInicio),
+              newDate(diaInicio + 1),
+            ]);
             return [
               produtoFabrica,
-              valorString,
+              `fini ${valorString}`,
               "color: #B8BAB8",
-              newDate(diaInt - quarentena_tempo[produto]),
               newDate(diaInt),
+              newDate(diaInt + 1),
             ];
           case "producao_insumo":
             return [
@@ -54,23 +78,23 @@ fetch("../data_solucao.json")
             return [
               produtoFabrica,
               `${valorString} p${item["produto_primario"]}`,
-              "color: #3488D1",
+              "color: #d7a7f3",
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
           case "transporte_destino":
             return [
               produtoFabrica,
-              `${valorString} f${item["fabrica_origem"]} k${item["veiculo"]}`,
-              "color: #A261C7",
+              `${valorString} f${item["fabrica_origem"]} ${item["veiculo"]}`,
+              "color: #f3dfa2",
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
           case "transporte_origem":
             return [
               produtoFabrica,
-              `${valorString} f${item["fabrica_destino"]} k${item["veiculo"]}`,
-              "color: #C589E8",
+              `${valorString} f${item["fabrica_destino"]} ${item["veiculo"]}`,
+              "color: #ffaf80",
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
@@ -78,7 +102,7 @@ fetch("../data_solucao.json")
             return [
               produtoFabrica,
               valorString,
-              "color: #8CE788",
+              "color: #cde4ab",
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
@@ -87,6 +111,7 @@ fetch("../data_solucao.json")
         }
       })
       .filter((value) => !!value);
+    chartData = [...chartData, ...extraItems];
   })
   .then(() => {
     google.charts.load("current", { packages: ["timeline"] });
@@ -121,6 +146,7 @@ fetch("../data_solucao.json")
           barLabelStyle: {
             color: "black",
             bold: true,
+            fontSize: 12,
             fontName: "Cambria Math",
             italic: true,
             bold: true,

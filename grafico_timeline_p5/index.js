@@ -16,7 +16,7 @@ let chartData;
 function newDate(dia) {
   return new Date(2024, 0, dia);
 }
-const produtos_usar_chart = [1, 2];
+const produtos_usar_chart = [5];
 
 fetch("../data_solucao.json")
   .then((response) => {
@@ -54,14 +54,14 @@ fetch("../data_solucao.json")
             const diaInicio = diaInt - quarentena_tempo[produto];
             extraItems.push([
               produtoFabrica,
-              `enc ${valorString}`,
+              `ini ${valorString}`,
               "color: #B8BAB8",
               newDate(diaInicio),
               newDate(diaInicio + 1),
             ]);
             return [
               produtoFabrica,
-              `lib ${valorString}`,
+              `fini ${valorString}`,
               "color: #B8BAB8",
               newDate(diaInt),
               newDate(diaInt + 1),
@@ -78,23 +78,23 @@ fetch("../data_solucao.json")
             return [
               produtoFabrica,
               `${valorString} p${item["produto_primario"]}`,
-              "color: #3488D1",
+              "color: #d7a7f3",
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
           case "transporte_destino":
             return [
               produtoFabrica,
-              `${valorString} f${item["fabrica_origem"]} k${item["veiculo"]}`,
-              "color: #A261C7",
+              `${valorString} f${item["fabrica_origem"]} ${item["veiculo"]}`,
+              "color: #f3dfa2",
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
           case "transporte_origem":
             return [
               produtoFabrica,
-              `${valorString} f${item["fabrica_destino"]} k${item["veiculo"]}`,
-              "color: #C589E8",
+              `${valorString} f${item["fabrica_destino"]} ${item["veiculo"]}`,
+              "color: #ffaf80",
               newDate(diaInt),
               newDate(diaInt + 1),
             ];
@@ -102,7 +102,7 @@ fetch("../data_solucao.json")
             return [
               produtoFabrica,
               valorString,
-              "color: #8CE788",
+              "color: #cde4ab",
               newDate(diaInt),
               newDate(diaInt + 1),
             ];

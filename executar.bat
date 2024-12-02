@@ -9,11 +9,11 @@ set python_file=%current_path%\extract_data.py
 REM Execute the Python file
 python "%python_file%"
 
-REM Start the HTTP server on port 50000
-start python -m http.server 50000
-
 REM Open the created link in the default browser
 start http://localhost:50000
+
+REM Start the HTTP server on port 50000
+start python -m http.server 50000
 
 REM Keep the terminal window open
 pause

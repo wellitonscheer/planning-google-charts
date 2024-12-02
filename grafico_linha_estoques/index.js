@@ -144,8 +144,10 @@ fetch("../data_solucao.json")
       document.body.appendChild(newDiv);
       var chart = new google.charts.Line(newDiv);
       var data = new google.visualization.DataTable();
-      data.addColumn("number", "Dia");
-      produtos.forEach((p) => data.addColumn("number", `p${p}`));
+      data.addColumn("number", "Day");
+      produtos.forEach((p) =>
+        data.addColumn("number", `p${numbers_style[Number(p)]}`)
+      );
       data.addRows(
         Object.entries(diasValores).map(([key, value]) => [
           Number(key),
@@ -189,8 +191,10 @@ fetch("../data_solucao.json")
         document.body.appendChild(newDiv);
         var chart = new google.charts.Line(newDiv);
         var data = new google.visualization.DataTable();
-        data.addColumn("number", "Dia");
-        produtosNaF.forEach((p) => data.addColumn("number", `p${p}`));
+        data.addColumn("number", "Day");
+        produtosNaF.forEach((p) =>
+          data.addColumn("number", `p${numbers_style[Number(p)]}`)
+        );
         data.addRows(
           fillNullValues(
             Object.entries(value).map(([key, value]) => {
@@ -208,11 +212,21 @@ fetch("../data_solucao.json")
         var options = {
           interpolateNulls: true,
           chart: {
-            title: `Estoque na f${key}`,
+            title: `Estoque na f${numbers_style[Number(key)]}`,
             subtitle: "em toneladas",
           },
           width: 1300,
           height: 700,
+          titleTextStyle: {
+            fontSize: 30,
+          },
+          legend: {
+            textStyle: {
+              bold: true,
+              fontSize: 20,
+              italic: true,
+            },
+          },
         };
         chart.draw(data, google.charts.Line.convertOptions(options));
       });

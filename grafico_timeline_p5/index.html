@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gráfico Timeline</title>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <p>Grafico mostrando p5</p>
+    <div id="chart-container" style="width: 3120px; margin: 10px">
+      <!-- <div
+        style="
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          background-color: #fff;
+          padding: 10px;
+          border: 1px solid #ddd;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+        "
+      > -->
+      <div
+        style="
+          font-family: Arial, sans-serif;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+            font-size: 16px;
+            margin: 5px 10px 5px 0;
+            display: inline-flex;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin-right: 8px;
+              border: 1px solid #000;
+              background-color: #aeb1f3;
+            "
+          ></div>
+          Produção Insumo
+        </div>
+        <div
+          style="
+            font-size: 16px;
+            margin: 5px 10px 5px 0;
+            display: inline-flex;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin-right: 8px;
+              border: 1px solid #000;
+              background-color: #d7a7f3;
+            "
+          ></div>
+          Produção Derivada
+        </div>
+        <div
+          style="
+            font-size: 16px;
+            margin: 5px 10px 5px 0;
+            display: inline-flex;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin-right: 8px;
+              border: 1px solid #000;
+              background-color: #ffaf80;
+            "
+          ></div>
+          Transporte origem
+        </div>
+        <div
+          style="
+            font-size: 16px;
+            margin: 5px 10px 5px 0;
+            display: inline-flex;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin-right: 8px;
+              border: 1px solid #000;
+              background-color: #f3dfa2;
+            "
+          ></div>
+          Transporte destino
+        </div>
+        <div
+          style="
+            font-size: 16px;
+            margin: 5px 10px 5px 0;
+            display: inline-flex;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin-right: 8px;
+              border: 1px solid #000;
+              background-color: #b8bab8;
+            "
+          ></div>
+          Quarentena
+        </div>
+
+        <div
+          style="
+            font-size: 16px;
+            margin: 5px 10px 5px 0;
+            display: inline-flex;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin-right: 8px;
+              border: 1px solid #000;
+              background-color: #cde4ab;
+            "
+          ></div>
+          Estoque
+        </div>
+      </div>
+      <!-- </div> -->
+
+      <div
+        id="timeline"
+        style="height: 5100px; width: 3230px; margin-right: 20px"
+      ></div>
+    </div>
+  </body>
+</html>
