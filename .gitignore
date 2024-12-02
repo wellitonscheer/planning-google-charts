@@ -1,8 +1,13 @@
-caie_gerar_grafico/*
-data/*
-grafico_page/*
-src_out/*
+caie_gerar_grafico
+data
+grafico_page
+src_out
+vane_stuff
+docs
 
 chart_data.html
 chat_bull.py
 caie_gerar_grafico.zip
+data_solucao.json
+main.py
+solucao*
