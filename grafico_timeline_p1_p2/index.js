@@ -54,14 +54,14 @@ fetch("../data_solucao.json")
             const diaInicio = diaInt - quarentena_tempo[produto];
             extraItems.push([
               produtoFabrica,
-              `enc ${valorString}`,
+              `ini ${valorString}`,
               "color: #B8BAB8",
               newDate(diaInicio),
               newDate(diaInicio + 1),
             ]);
             return [
               produtoFabrica,
-              `lib ${valorString}`,
+              `fini ${valorString}`,
               "color: #B8BAB8",
               newDate(diaInt),
               newDate(diaInt + 1),
