@@ -1,0 +1,68 @@
+[
+  {
+    "tipo": "producao_insumo",
+    "produto": "1",
+    "fabrica": "1",
+    "dia": "1",
+    "valor": 80.0,
+    "produto_primario": null,
+    "fabrica_origem": null,
+    "fabrica_destino": null,
+    "veiculo": null
+  },
+  {
+    "tipo": "transporte_origem",
+    "produto": "1",
+    "fabrica": "1",
+    "dia": "1",
+    "valor": 21.168,
+    "produto_primario": null,
+    "fabrica_origem": "1",
+    "fabrica_destino": "5",
+    "veiculo": "t1-k1"
+  },
+  {
+    "tipo": "estoque",
+    "produto": "1",
+    "fabrica": "1",
+    "dia": "0",
+    "valor": 560.0,
+    "produto_primario": null,
+    "fabrica_origem": null,
+    "fabrica_destino": null,
+    "veiculo": null
+  },
+  {
+    "tipo": "transporte_destino",
+    "produto": "1",
+    "fabrica": "1",
+    "dia": "5",
+    "valor": 12.096,
+    "produto_primario": null,
+    "fabrica_origem": "3",
+    "fabrica_destino": "1",
+    "veiculo": "t2-k2"
+  },
+  {
+    "tipo": "quarentena",
+    "produto": "1",
+    "fabrica": "1",
+    "dia": "22",
+    "valor": 80.0,
+    "produto_primario": null,
+    "fabrica_origem": null,
+    "fabrica_destino": null,
+    "veiculo": null
+  },
+  {
+    "tipo": "producao_derivado",
+    "produto": "4",
+    "fabrica": "4",
+    "dia": "6",
+    "valor": 40.0,
+    "produto_primario": "3",
+    "fabrica_origem": null,
+    "fabrica_destino": null,
+    "veiculo": null
+  }
+]
