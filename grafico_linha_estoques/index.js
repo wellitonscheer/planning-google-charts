@@ -25,19 +25,15 @@ function newDate(dia) {
 function fillNullValues(data) {
   let lastValidValues = [];
 
-  return data.map((row, rowIndex) => {
-    // Process data rows
+  return data.map((row) => {
     return row.map((value, colIndex) => {
       if (colIndex === 0) {
-        // First column (day names) remains unchanged
         return value;
       }
 
       if (value === null) {
-        // Replace null with the last valid value for this column
         return lastValidValues[colIndex] ?? null;
       } else {
-        // Update the last valid value for this column
         lastValidValues[colIndex] = value;
         return value;
       }
